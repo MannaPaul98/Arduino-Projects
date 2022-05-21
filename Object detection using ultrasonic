@@ -1,0 +1,35 @@
+Code:
+const int Trigpin=
+const int Echopin=
+const int relay=
+const int power_button=
+
+void setup(){
+  serial.brgin(9600);// starting the serial monitor
+  pinMode(Trigpin,OUTPUT);
+  pinMode(Echopin,INPUT);
+  pinMode(relay,OUTPUT);
+  pinMode(power_button,INPUT);
+  
+}
+void loop(){
+  int duration=Ultrasonic_input();
+  if(duration< MAXIMUN DISTANCE DURATION)
+  {
+      digitalWrite(relay,HIGH);
+  }
+  power_input=digitalRead(power_button);
+  if(power_input=="HIGH"){
+    digitalWrite(Trigpin,LOW);
+    digitalWrite(relay,LOW); 
+    delay(15000);
+  }
+
+}
+int Ultrasonic_input(){
+digitalWrite(Trigpin,LOW);
+delayMicroseconds(2);
+digitalWrite(Trigpin,HIGH);
+delayMicroseconds(10);
+return pulseIn(Echopin,INPUT);
+}
